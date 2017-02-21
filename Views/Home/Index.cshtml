@@ -1,0 +1,18 @@
+﻿@model DeckOfPlayingCards.Web.ViewModels.PlayerCardViewModel
+
+@using (Html.BeginForm())
+{
+<div class="row">
+    <div class="col-md-4 text-center">             
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>         
+</div>
+
+<div class="row">    
+    <div class="col-md-4">
+        <p>
+            @Html.ActionLink("Shuffle And Display", "DisplayCardsInHand", new { @class = "btn btn-default" }, null)            
+        </p>
+    </div>
+</div>
+}
