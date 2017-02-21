@@ -1,0 +1,5 @@
+C:\Users\Mayank\Documents\PSS\DeckOfPlayingCards\DeckOfPlayingCards.Core\bin\Debug\DeckOfPlayingCards.Core.dll
+C:\Users\Mayank\Documents\PSS\DeckOfPlayingCards\DeckOfPlayingCards.Core\bin\Debug\DeckOfPlayingCards.Core.pdb
+C:\Users\Mayank\Documents\PSS\DeckOfPlayingCards\DeckOfPlayingCards.Core\obj\Debug\DeckOfPlayingCards.Core.csprojResolveAssemblyReference.cache
+C:\Users\Mayank\Documents\PSS\DeckOfPlayingCards\DeckOfPlayingCards.Core\obj\Debug\DeckOfPlayingCards.Core.dll
+C:\Users\Mayank\Documents\PSS\DeckOfPlayingCards\DeckOfPlayingCards.Core\obj\Debug\DeckOfPlayingCards.Core.pdb
