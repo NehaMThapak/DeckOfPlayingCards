@@ -43,14 +43,13 @@ namespace DeckOfPlayingCards.Core.Utilities
         public static T ParseEnum<T>(this long value) where T : struct
         {
             if (!typeof(T).IsEnum)
-                throw new InvalidOperationException($"Invalid enum Type '{typeof(T).ToString()}'.");
+                throw new InvalidOperationException($"Invalid enum Type '{typeof(T)}'.");
 
             T result;
-            if (!Enum.TryParse<T>(value.ToString(), out result))
+            if (!Enum.TryParse(value.ToString(), out result))
                 throw new ArgumentException($"'{value}' is not a defined value for enum type '{typeof(T).FullName}'.");
-
-            // Need to have this line to make sure the value is defined in enum.
-            // Ref: https://msdn.microsoft.com/en-us/library/dd783499(v=vs.110).aspx
+            
+            // Check value is defined in the enum or not.
             if (!Enum.IsDefined(typeof(T), result))
                 throw new ArgumentException($"'{value}' is not an underlying value for enum type '{typeof(T).FullName}'.");
 
@@ -65,11 +64,11 @@ namespace DeckOfPlayingCards.Core.Utilities
         /// <returns>A long number matching a value of the enum.</returns>
         public static long ToLong(this Enum value)
         {
-            Type underlyingType = Enum.GetUnderlyingType(value.GetType());
+            var underlyingType = Enum.GetUnderlyingType(value.GetType());
             if (underlyingType != typeof(long))
                 throw new ArgumentException(nameof(value), value.ToString(), null);
 
-            return (long)((object)value);
+            return (long)(object)value;
         }
     }
 }

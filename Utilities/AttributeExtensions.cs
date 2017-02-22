@@ -28,7 +28,7 @@ namespace DeckOfPlayingCards.Core.Utilities
         /// </summary>
         /// <typeparam name="T">Attribute type.</typeparam>
         /// <param name="provider">Attribute provider.</param>
-        /// <returns></returns>
+        /// <returns>Enumerable item.</returns>
         public static IEnumerable<T> GetAttributes<T>(this ICustomAttributeProvider provider)
             where T : Attribute
         {

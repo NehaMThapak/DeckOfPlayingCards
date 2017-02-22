@@ -21,12 +21,12 @@ namespace DeckOfPlayingCards.Core
         /// Get suit of this card i.e. one of the value from <see cref="Suits"/>.
         /// </summary>
         /// <returns>Value of <see cref="Suits"/>.</returns>
-        int getSuit();
+        int GetSuit();
 
         /// <summary>
         /// Get value of this card i.e. one of the value from <see cref="CardNumbers"/>.
         /// </summary>
         /// <returns>Value of <see cref="CardNumbers"/>.</returns>
-        int getValue();
+        int GetValue();
     }
 }

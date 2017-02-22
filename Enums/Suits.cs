@@ -10,25 +10,25 @@ namespace DeckOfPlayingCards.Core.Enums
         /// <summary>
         /// Suit of type Heart.
         /// </summary>
-        [Description("Heart")]
+        [Description("H")]
         Heart = 1,
 
         /// <summary>
         /// Suit of type Diamond.
         /// </summary>
-        [Description("Diamond")]
+        [Description("D")]
         Diamond = 2,
 
         /// <summary>
         /// Suit of type Spade.
         /// </summary>
-        [Description("Spade")]
+        [Description("S")]
         Spade = 3,
 
         /// <summary>
         /// Suit of type Club.
         /// </summary>
-        [Description("Club")]
+        [Description("C")]
         Club = 4
     }
 }

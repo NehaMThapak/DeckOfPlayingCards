@@ -6,7 +6,7 @@ namespace DeckOfPlayingCards.Core.Models
     /// <summary>
     /// Represents a playing card from a card deck having 52 cards. The card has a 
     /// suit i.e. Heart, Diamond, Spade, Club. Each of the suit has one 
-    /// of the 13 values specified in <see cref="CardNumbers"/> where Ace is considered as
+    /// of the 13 values specified in <see cref="CardNumbers"/> where Ace is being as
     /// highest value.
     /// </summary>
     public class Card : ICard
@@ -14,12 +14,12 @@ namespace DeckOfPlayingCards.Core.Models
          /// <summary>
          /// This card's suit, one of the value from <see cref="Suits"/> Heart, Diamond, Spade, Club       
          /// </summary>
-         private readonly int Suit;
+         private readonly int _suit;
         
         /// <summary>
         /// This card's value. 
         /// </summary>
-        private readonly int Value;
+        private readonly int _value;
 
         /// <summary>
         /// Different suits of a deck.
@@ -36,41 +36,43 @@ namespace DeckOfPlayingCards.Core.Models
         /// </summary>
         public Card()
         {
-            Suit = 1;
-            Value = 13; // Default value for Aces.
+            _suit = 1;
+
+            // Default value for Aces.
+            _value = 13; 
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Card"/> with given arguments. 
         /// </summary>
-        public Card (int value, int suit)
+        public Card (int suit, int value)
         {
             if (suit != (int) Suits.Spade && suit != (int)Suits.Heart && suit != (int)Suits.Diamond &&
                   suit != (int)Suits.Club)
-                throw new InvalidArgumentException("Illegal playing card suit");
+                throw new InvalidArgumentException("Invalid playing card suit");
             if (value < 1 || value > 13)
-                throw new InvalidArgumentException("Illegal playing card value");
-            Value = value;
-            Suit = suit;
+                throw new InvalidArgumentException("Invalid playing card value");
+            _value = value;
+            _suit = suit;
         }
 
 
         /// <summary>
         /// Get suit of this card i.e. one of the value from <see cref="Suits"/>.
         /// </summary>
-        /// <returns>Value of <see cref="Suits"/>.</returns>
-        public int getSuit()
+        /// <returns>_value of <see cref="Suits"/>.</returns>
+        public int GetSuit()
         {
-            return Suit;
+            return _suit;
         }
 
         /// <summary>
         /// Get value of this card i.e. one of the value from <see cref="CardNumbers"/>.
         /// </summary>
-        /// <returns>Value of <see cref="CardNumbers"/>.</returns>
-        public int getValue()
+        /// <returns>_value of <see cref="CardNumbers"/>.</returns>
+        public int GetValue()
         {
-            return Value;
+            return _value;
         }
     }
 }

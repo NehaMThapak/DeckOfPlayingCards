@@ -1,26 +1,22 @@
-﻿using DeckOfPlayingCards.Core.Utilities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DeckOfPlayingCards.Core.Models
 {
     /// <summary>
-    /// Represents a hand class which contains methods to add, remove cards from the hand,
-    /// get total cards in the hand etc.
+    /// Represents a hand class which contains methods to add, remove cards and sort it by value.
     /// </summary>
     public class Hand
-    {
+    {      
         // The cards in the hand.
-        private List<Card> hand;   
+        public List<Card> hand;   
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Hand"/>. 
         /// </summary>
         public Hand()
-        {
+        {            
             hand = new List<Card>();
         }
        
@@ -31,31 +27,34 @@ namespace DeckOfPlayingCards.Core.Models
         public void AddCard(Card card)
         {
             if (card == null)
-                throw new ArgumentNullException("Can't add a null card to a hand.", nameof(card));
+                throw new ArgumentNullException($"Can't add a null '{nameof(card)}' to a hand.");
             hand.Add(card);
         }       
 
         /// <summary>
-        /// Sorts the cards in the hand so that cards are sorted into order of increasing value.
-        /// Cards with the same value are sorted by suit. Note that aces are considered
-        /// to have the lowest value.
+        /// Sorts the cards in the hand so that cards are sorted into ascending order.
+        /// Cards with the same value are sorted by suit. Aces are considered
+        /// to have the highest value.
         /// </summary>
         public void SortByValue()
         {
-            List<Card> newHand = new List<Card>();
-            while (hand.Count() > 0)
+            var newHand = new List<Card>();
+
+            // Iterate through till card exists in the hand.
+            while (hand.Any())
             {
-                int pos = 0;  // Position of minimal card.
-                Card c = hand[0];  // Minimal card.
-                for (int i = 1; i < hand.Count(); i++)
+                // Lowest card position.
+                var pos = 0;
+
+                // Lowest card.
+                var c = hand[0];  
+                for (var i = 1; i < hand.Count; i++)
                 {
-                    Card c1 = hand[i];
-                    if (c1.getValue() < c.getValue() ||
-                            (c1.getValue() == c.getValue() && c1.getSuit() < c.getSuit()))
-                    {
-                        pos = i;
-                        c = c1;
-                    }
+                    var c1 = hand[i];
+                    if (c1.GetValue() >= c.GetValue() && (c1.GetValue() != c.GetValue() || c1.GetSuit() >= c.GetSuit()))
+                        continue;
+                    pos = i;
+                    c = c1;
                 }
                 hand.RemoveAt(pos);
                 newHand.Add(c);

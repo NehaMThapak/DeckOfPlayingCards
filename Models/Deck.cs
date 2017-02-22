@@ -9,21 +9,14 @@ namespace DeckOfPlayingCards.Core.Models
     /// Represents deck of the playing cards.
     /// </summary>
     public class Deck : IDeck
-    {       
-        /// <summary>
-        /// Keeps track of the number of cards that have been used from
-        /// the deck so far.
-        /// </summary>
-        private int cardsUsed;
-
+    {                      
         /// <summary>
         /// Initializes a new instance of the <see cref="Deck"/>. 
         /// </summary>
         public Deck()
-        {
+        {          
             CreateCardDeck();
-            Shuffle();
-            cardsUsed = 0;
+            Shuffle();         
         }
 
         /// <summary>
@@ -46,8 +39,7 @@ namespace DeckOfPlayingCards.Core.Models
         {
             // Creating a card deck iterating through the range of (1 - 4) suits. Then
             // use range (1 - 13) for the cards, by selecting a new card based on the
-            // suits and cardnumbers. Creating a grouped result into the list
-            // to manipulate for shuffling.
+            // suits and card numbers. 
             Cards = Enumerable.Range(1, 4).SelectMany(x => Enumerable.Range(1, 13).Select(y => new Card(x, y)
             {
                 Suits = (Suits)x,
