@@ -2,17 +2,23 @@
 
 @using (Html.BeginForm())
 {
-<div class="row">
-    <div class="col-md-4 text-center">             
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>         
-</div>
+    <div class="mainDiv">
+        @foreach (var item in Model.Cards)
+        {
+        <div class="row text-left">
+            <div class="col-md-4">
+                <p><strong>@item.CardsInHand</strong>
+                </p>
+            </div>
+        </div>
+        }
+    </div>
 
-<div class="row">    
-    <div class="col-md-4">
-        <p>
-            @Html.ActionLink("Shuffle And Display", "DisplayCardsInHand", new { @class = "btn btn-default" }, null)            
-        </p>
+    <div class="row text-left">    
+    <div class="col-md-4 display">
+        <span>
+            @Html.ActionLink("Shuffle And Display", "Index", null, new { @class = "btn btn-default" })            
+        </span>
     </div>
 </div>
 }

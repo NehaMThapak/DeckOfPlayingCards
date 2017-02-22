@@ -1,0 +1,5 @@
+Player #1: 3D-6D-8H-9C-AD
+Player #2: 4H-6S-7D-JD-AC
+Player #3: 2C-8S-10C-QS-QC
+Player #4: 2H-7H-9S-KH-AS
+Player #5: 5D-5S-7C-10H-10S

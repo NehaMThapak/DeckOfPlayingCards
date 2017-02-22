@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
 namespace DeckOfPlayingCards.Web.ViewModels
 {
@@ -28,6 +25,5 @@ namespace DeckOfPlayingCards.Web.ViewModels
             /// </summary>
             public string CardsInHand { get; set; }
         }
-
     }
 }
